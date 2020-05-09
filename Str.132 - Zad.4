@@ -1,0 +1,44 @@
+#Zad 4. Utwórz grę, w której komputer wybiera losowo słowo, które gracz musi
+#       odgadnąć. Komputer informuje gracza, ile liter znajduje się w wybranym
+#       słowie. Następnie gracz otrzymuje pięć szans na zadanie pytania, czy jakaś litera
+#       jest zawarta w tym słowie. Komputer może odpowiedzieć tylko „tak” lub „nie”.
+#       Potem gracz musi odgadnąć słowo.
+
+#                                         BIBLIOTEKI
+
+# importuję bibliotekę random
+import random
+
+
+#                                     WARTOŚCI POCZĄTKOWE
+
+# sekwencja wartości początkowych
+WORDS = ('kapelusz','kwiaty','masło','kotlet','samochód','puszka')
+
+# losowy wybór jednegosłowa z sekwencji WORDS
+word = random.choice(WORDS)
+
+#                                           KOD GRY
+
+print('\nOdgadnij słowo. Zawiera ono',len(word),'liter')
+print('\nPierwsza litera to ',"'",word[0],"'"',a ostatnia to ',"'" ,word[-1],"'.")
+print('\nZanim odgadniesz to słowo masz 5 zapytań czy zawiera ono dane litery.')
+
+for prompt in range(5):
+    prompt = input('\nWpisz literę: ').strip()
+    prompt = prompt.lower() 
+    if prompt in word:
+        print('\nTak.')
+    else:
+        print('\nNie.')
+
+print('\nTwój czas się skończył, pora odpowiedzieć na pytanie.')
+guess = input('Jakie to słowo: .')   
+
+if guess.lower() == word:
+    print('\nZgadłeś.')
+else:
+    print('\nNiestety nie zgadleś. Poprawne słowo to: ', word)
+
+
+input('\nAby zakończć program naciśnij ENTER')
