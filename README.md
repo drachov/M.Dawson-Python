@@ -1,2 +1,2 @@
 # M.Dawson-Python
-Zadania z ksiązki "Python dla każdego. Podstawy programowania.
+Zadania z książki "Python dla każdego. Podstawy programowania.
